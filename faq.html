@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Prakhar FIT</title>
+    <meta name="description" content="Frequently asked questions about Prakhar Vaskale's online personal training and nutrition coaching. Everything you need to know before getting started.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .faq-section-title {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+            margin-top: 3rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(204,255,0,0.2);
+        }
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .faq-item:hover {
+            border-color: rgba(204,255,0,0.3);
+        }
+        .faq-question-btn {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.25rem 1.5rem;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-main);
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+        .faq-question-btn .icon {
+            color: var(--accent);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        .faq-question-btn[aria-expanded="true"] .icon {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            display: none;
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+            font-size: 0.97rem;
+        }
+        .faq-answer.open {
+            display: block;
+        }
+        .faq-answer p {
+            margin-bottom: 0.75rem;
+        }
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        .faq-answer strong {
+            color: var(--text-main);
+        }
+        .faq-answer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .faq-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        .faq-nav a {
+            padding: 0.5rem 1.25rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+        .faq-nav a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">PRAKHAR FIT</a>
+            <div class="nav-links">
+                <a href="index.html#journey">My Story</a>
+                <a href="programs.html">Programs</a>
+                <a href="transformations.html">Results</a>
+                <a href="resources.html">Resources</a>
+                <a href="faq.html" class="text-accent">FAQ</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="btn btn-accent">Get in Touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header mt-nav">
+        <div class="container">
+            <h1 class="section-title">Frequently Asked Questions</h1>
+            <p class="section-subtitle max-w-2xl mx-auto mt-4">Honest answers to every question you are likely to have before committing to anything. If something is still unclear, fill out the contact form and ask directly.</p>
+        </div>
+    </header>
+
+    <main class="section dark-section">
+        <div class="container" style="max-width: 820px;">
+
+            <!-- SECTION JUMP NAV -->
+            <div class="faq-nav">
+                <a href="#about">About Prakhar</a>
+                <a href="#right-for-me">Is This for Me</a>
+                <a href="#goals">Goals and Results</a>
+                <a href="#online">Online Coaching</a>
+                <a href="#training">Training</a>
+                <a href="#nutrition">Nutrition</a>
+                <a href="#logistics">Logistics</a>
+            </div>
+
+            <!-- SECTION 1: ABOUT PRAKHAR -->
+            <div id="about">
+                <p class="faq-section-title">About Prakhar</p>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        Who is Prakhar and why should I trust him with my health?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>I am an ACE Certified Personal Trainer and Sports Nutrition Specialist based in Bhopal, India. I hold a Level 4 CPT, an EREPS Level 4 membership, a SPEFL-SC certification, and additional qualifications in Olympic lifting, kettlebell training, plyometrics, suspension training, and CPR.</p>
+                        <p>But credentials alone are not enough. I spent years as a practicing advocate before becoming a coach. At my heaviest I weighed 120 kg, and I lost close to 30 kg using the same evidence-based principles I now apply to my clients. I understand what it takes from the inside, not just from a textbook. That combination of lived experience and formal training is what informs every program I write.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        Are you a full-time coach or is this a side project?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Coaching is my primary profession. I left legal practice specifically to do this full-time. When you work with me, you are not fitting into someone's evenings and weekends. You have access to a coach who is fully committed to this work.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        Where are you based and do you coach people outside Bhopal?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>I am based in Bhopal, Madhya Pradesh, but both of my programs are delivered entirely online. I coach clients across India. All communication happens through WhatsApp and email, and workout and nutrition plans are delivered digitally. You do not need to be in Bhopal, or even in the same time zone, for this to work.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: IS THIS FOR ME -->
+            <div id="right-for-me">
+                <p class="faq-section-title">Is This for Me</p>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        I have never trained before. Am I too much of a beginner?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No such thing. At 120 kg with zero gym experience, I was the exact definition of a beginner. I know what it feels like to walk into a gym and not understand anything happening around you.</p>
+                        <p>Every program I write begins at your actual starting point, not an assumed one. You will learn correct form, build confidence gradually, and progress at a pace that makes sense for your body. Most of my clients have no prior training experience when they start.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        I do not want to lose weight. I want to build muscle. Is this still relevant to me?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. The system I use applies equally well to muscle gain, fat loss, weight maintenance, and general fitness. The principles of progressive overload, evidence-based programming, and proper nutrition do not change by goal. What changes is how those principles are applied: your calorie targets, your macro split, your training volume, and your progression model.</p>
+                        <p>My own story started with fat loss, but I coach clients across all goals. When you fill out the contact form, tell me what you are actually working towards and I will build the program around that.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        I just want to get healthier and more active. I do not have a specific physique goal. Is that enough to work with you?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, and honestly that is a great starting point. A lot of people come in knowing they want to feel better, have more energy, and build a sustainable routine but without a specific number in mind. That is a completely valid goal and one I can build a program around. Improved energy, better sleep, reduced stress, and stronger daily function are real outcomes, and they are worth pursuing with the same rigour as any aesthetic goal.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        I have a pre-existing health condition. Can I still train with you?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Disclose it in your intake form and I will review it carefully. For most common conditions, including hypertension, type 2 diabetes, joint issues, and back problems, exercise is not contraindicated. It is often prescribed. I will work within any medical boundaries you have and, where appropriate, ask you to get clearance from your doctor before we begin.</p>
+                        <p>If your condition requires medical supervision that goes beyond the scope of personal training, I will tell you honestly rather than take you on and put you at risk.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        I am a woman. Are your programs suitable for me?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. I coach both men and women. The foundational principles of training and nutrition apply across sexes, and programs are individualised around your body composition data, your goals, and your starting point. If relevant, hormonal considerations such as cycle-synced training or specific protein targets are factored in.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: GOALS AND RESULTS -->
+            <div id="goals">
+                <p class="faq-section-title">Goals and Results</p>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        How long will it take to see results?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>This depends on what you mean by results and where you are starting from. Some things happen quickly. Energy levels, sleep quality, and strength improvements are typically noticeable within the first 2 to 4 weeks.</p>
+                        <p>Visible body composition changes, such as fat loss or visible muscle development, generally take 6 to 12 weeks of consistent effort to become clearly apparent. The timeline is not fixed because it depends on your starting point, your adherence, your sleep, and your stress levels.</p>
+                        <p>What I can tell you is that my programs are built to deliver results in a sustainable way, not a fast-then-crash way. Results that come from doing things correctly tend to stay.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        Can I build muscle and lose fat at the same time?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>For beginners, yes. This is called body recomposition and it is most achievable when you are new to training or returning after a significant break. The body can partition nutrients effectively in this window to support both muscle growth and fat loss simultaneously.</p>
+                        <p>For more experienced trainees, it becomes harder to do both at the same time and a focused approach, either a structured muscle-building phase or a fat loss phase, tends to produce better results. I will advise you on the right strategy based on your current level and goals during our initial review.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        What results do your clients typically achieve?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Results vary significantly based on starting point, goal, and consistency. Clients who follow the program and nutrition plan as designed consistently report measurable fat loss, strength improvements, and improved energy within 8 to 12 weeks. You can read specific client accounts on the <a href="transformations.html">Results page</a>.</p>
+                        <p>I do not make specific outcome promises because individual results depend on factors that are partly outside the program's control, including sleep, stress, and day-to-day adherence. What I can promise is that the program will be built correctly, adjusted based on your weekly data, and supported throughout.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: ONLINE COACHING -->
+            <div id="online">
+                <p class="faq-section-title">Online Coaching Process</p>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        How does online coaching actually work?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>After you fill out the contact form and we agree on which program is right for you, the process looks like this:</p>
+                        <p><strong>Week 1:</strong> You complete a detailed intake form covering your health history, food preferences, schedule, training experience, and goals. I use this to build your initial workout and nutrition plan.</p>
+                        <p><strong>Ongoing:</strong> Your workout plan is delivered digitally with full exercise descriptions, sets, reps, and coaching notes. Your nutrition plan is built around your food preferences, not a generic template.</p>
+                        <p>On the Complete Transformation, I check in with you weekly via WhatsApp to review progress, adjust the plan, and answer any questions. On the Essentials Plan, I am reachable by email and update your plan monthly.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        Do we ever have video calls or is everything text-based?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The initial discussion typically happens via WhatsApp voice note or a short call, depending on your preference. Ongoing coaching is primarily WhatsApp and email-based, which most clients find more convenient than scheduled video calls.</p>
+                        <p>Form review on the Complete Transformation is done via video. You send me a clip of your exercise, I review it and send specific feedback. This has worked reliably for every client I have coached online.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        How quickly do you respond to messages?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>On the Complete Transformation, WhatsApp access is available Monday to Saturday from 9am to 9pm. I aim to respond within a few hours. For non-urgent questions, I always respond by end of day. On the Essentials Plan, email responses are within 48 hours.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        What happens if I miss a week or fall off the plan?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Life happens. Missing a session or a week does not end your progress. What matters is what you do when you return. On the Complete Transformation, I will know via the weekly check-in, and we will adjust the plan accordingly. There is no judgment. I have been the person who fell off before, and I know that sustainable change has setbacks built into it.</p>
+                        <p>The goal is never perfection. It is consistency over time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 5: TRAINING -->
+            <div id="training">
+                <p class="faq-section-title">Training Questions</p>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        Do I need a gym membership or can I train at home?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Both work. The Complete Transformation is built around whatever setup you have access to. If you train at a gym, your program will use weights and equipment. If you train at home, it will be designed around what you have, including no equipment at all if necessary.</p>
+                        <p>That said, access to a gym does give you more options for progressive overload, which is the primary driver of both fat loss and muscle gain over time. If you are serious about long-term progress, a basic gym membership is worth the investment.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        How many days a week will I need to train?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>This depends on your goal and schedule. Most beginners start with 3 to 4 sessions per week, each between 45 and 60 minutes. As you progress, volume can be increased. I always build the program around the time you actually have, not the time you wish you had.</p>
+                        <p>During the intake process, you tell me your available training days and I design accordingly. You will not receive a program that requires 6 days a week in a gym if you have told me you have 3 available evenings.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        I have a gym phobia. I find gyms intimidating. Will you help me with that?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. I know that feeling precisely. I will make sure you arrive at the gym knowing exactly what you are doing, what equipment you need, and how every exercise is performed before you ever walk through the door. Confidence in the gym comes from preparation, and that preparation is built into the program from day one.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        Is your training approach just lifting weights, or do you also programme cardio?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Both, in the right balance for your goal. Resistance training is the backbone of every program because it is the most effective tool for changing body composition, improving metabolism, and building long-term strength, regardless of your goal. Cardio is programmed in addition to, not instead of, resistance work.</p>
+                        <p>The type and amount of cardio depends on your goal. For general fitness and health, moderate steady-state cardio is included. For fat loss, a mix of LISS and HIIT is used strategically. For muscle gain, cardio is kept lower to avoid interfering with recovery.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        I have a knee or back issue. Can I still train?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>In most cases, yes. Training around an injury is often possible and, when done correctly, can actually support recovery by improving the surrounding musculature. Let me know the specifics in your intake form. I will design the program to avoid aggravating the issue and include modifications or alternatives where needed. Where your situation requires physiotherapy input first, I will tell you clearly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 6: NUTRITION -->
+            <div id="nutrition">
+                <p class="faq-section-title">Nutrition Questions</p>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        Will I have to give up Indian food?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. This is one of the questions I get most often and the answer is always the same. A good nutrition plan does not require you to abandon your cuisine. I am from Bhopal. I understand Indian food, Indian household cooking, and the cultural role food plays in daily life. Your plan will be built around real Indian foods across vegetarian, vegan, or non-vegetarian preferences.</p>
+                        <p>What changes is the structure, the portions, and the balance of macronutrients, not the food itself.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        Do I have to track calories every day?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tracking is the most reliable tool for hitting your targets, especially at the beginning when you are calibrating portion sizes and food choices. That said, the level of tracking I ask for depends on your goal and your appetite for detail.</p>
+                        <p>For fat loss or muscle gain with specific targets, tracking macros accurately is important in the early weeks. Over time, as you understand your foods and portions, many clients move to a less rigorous approach while maintaining results. For general fitness and health goals, a structured meal plan with guidelines is often sufficient without daily calorie counting.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        Do you recommend supplements?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>I keep supplement recommendations minimal and evidence-based. The supplements with the most consistent research support are creatine monohydrate, protein powder (as a convenience tool, not a food replacement), and vitamin D if you are deficient, which most Indians are.</p>
+                        <p>I do not recommend fat burners, testosterone boosters, pre-workouts beyond basic caffeine, or anything with weak or no scientific backing. Supplements fill gaps in an already solid diet. They do not replace one.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        I am vegetarian. Can you build a high-protein plan around that?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Hitting adequate protein on a vegetarian diet is achievable with the right food choices. Paneer, dahi, eggs (if included), lentils, legumes, soya chunks, and dairy-based options can all be used effectively. I have built vegetarian plans that hit 150g of protein per day without relying on supplements for the majority of intake.</p>
+                        <p>For vegan clients, the options are slightly narrower but still workable with the right combination of soya, legumes, lentils, tofu, and plant-based protein supplements where needed.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        What do I do about eating out or weddings and functions?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>A plan that does not account for real life is not a good plan. I will give you practical strategies for eating out, attending functions, and managing social eating without derailing your progress. This includes how to make better choices from a restaurant menu, how to handle buffets, and how to adjust the rest of the day around a larger meal.</p>
+                        <p>The goal is to make this work in the context of your actual life, not a controlled experiment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 7: LOGISTICS -->
+            <div id="logistics">
+                <p class="faq-section-title">Logistics</p>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        How much do your programs cost?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Pricing is not listed publicly because it depends on the program and the duration. Fill out the contact form and I will give you clear pricing based on what you are looking for. There is no obligation after that conversation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        How do I get started?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Fill out the <a href="contact.html">contact form</a>. It takes about 2 minutes. Tell me your goal, your schedule, and any questions you have. I will review your details personally and get back to you within 24 hours with a clear next step. No automated responses, no sales funnel.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        How many clients do you take on at one time?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>I deliberately limit the number of active coaching clients to ensure every person gets genuine attention and not a templated response. The Complete Transformation is limited to 5 new clients at any one time. If spots are full when you apply, I will let you know and add you to the waitlist.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        What if I am not satisfied with the program?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>If something is not working, tell me. The program is not a fixed document. It is adjusted based on your feedback, your progress data, and what is actually happening in your life. Most issues can be resolved by adjusting the plan rather than ending the arrangement.</p>
+                        <p>Specific refund or cancellation terms are discussed before you commit to anything. I do not take payment and disappear.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        I have a question that is not answered here. What do I do?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Fill out the <a href="contact.html">contact form</a> and ask it directly. I read every submission personally and will answer your specific question, not send you back to this page.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center" style="margin-top: 4rem; padding: 2.5rem; background: var(--bg-card); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                <h3 class="mb-2">Still Have a Question?</h3>
+                <p class="text-muted mb-4">Fill out the contact form and ask directly. I will get back to you within 24 hours.</p>
+                <a href="contact.html" class="btn btn-accent">Fill Out the Contact Form</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <h3 class="logo mb-4">PRAKHAR FIT</h3>
+            <p class="text-muted mb-4">vaskale123@gmail.com | +91 7999428347</p>
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                <a href="certifications.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.85rem;">Certifications</a>
+                <a href="calculator.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.85rem;">Calculator</a>
+                <a href="brands.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.85rem;">Brand Partnerships</a>
+            </div>
+            <p class="text-sm text-dark-muted">&copy; 2026 Prakhar Vaskale. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', !expanded);
+                const answer = btn.nextElementSibling;
+                answer.classList.toggle('open', !expanded);
+            });
+        });
+    </script>
+
+</body>
+</html>

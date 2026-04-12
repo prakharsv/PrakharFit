@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Partnerships | Prakhar FIT</title>
+    <meta name="description" content="Partner with Prakhar Vaskale   ACE Certified Personal Trainer and Sports Nutrition Specialist. Authentic fitness and nutrition brand collaborations for the Indian market.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .brand-hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #141414 100%);
+            border-bottom: 1px solid rgba(204,255,0,0.15);
+            padding: 8rem 1.5rem 5rem;
+            text-align: center;
+            margin-top: 70px;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 1.75rem 1.25rem;
+            text-align: center;
+        }
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .collab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.75rem;
+        }
+        .collab-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+        .collab-card:hover {
+            border-color: rgba(204,255,0,0.3);
+            transform: translateY(-4px);
+        }
+        .collab-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+        .collab-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+        .collab-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .audience-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+        .audience-table th {
+            background: var(--bg-card);
+            color: var(--accent);
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 1rem 1.25rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .audience-table td {
+            padding: 0.9rem 1.25rem;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .audience-table tr:nth-child(even) td {
+            background: rgba(255,255,255,0.02);
+        }
+        .audience-table td:first-child {
+            font-weight: 600;
+            color: var(--text-main);
+            width: 35%;
+        }
+        .values-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+        .values-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .values-list li i {
+            color: var(--accent);
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+        .pitch-form-wrapper {
+            background: var(--bg-card);
+            border: 1px solid rgba(204,255,0,0.15);
+            border-radius: 14px;
+            padding: 3rem;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .what-i-will-not-do {
+            background: rgba(255,68,68,0.04);
+            border: 1px solid rgba(255,68,68,0.15);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 2rem;
+        }
+        .what-i-will-not-do p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin: 0;
+        }
+        .what-i-will-not-do strong {
+            color: #ff7070;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">PRAKHAR FIT</a>
+            <div class="nav-links">
+                <a href="index.html#journey">My Story</a>
+                <a href="programs.html">Programs</a>
+                <a href="transformations.html">Results</a>
+                <a href="resources.html">Resources</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="btn btn-accent">Get in Touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="brand-hero">
+        <div class="container">
+            <p class="text-accent" style="font-family: var(--font-heading); letter-spacing: 2px; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1rem;">Brand Partnerships</p>
+            <h1 class="section-title" style="font-size: clamp(2rem, 5vw, 3.5rem); max-width: 800px; margin: 0 auto 1.5rem;">A Credentialed Voice in Indian Fitness</h1>
+            <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 640px; margin: 0 auto; line-height: 1.75;">I partner with brands whose products I would genuinely recommend to the people I coach. If you are building something in the fitness, nutrition, or wellness space and want an authentic, credentialed advocate in the Indian market, read on.</p>
+        </div>
+    </div>
+
+    <!-- WHO I AM -->
+    <section class="section dark-section">
+        <div class="container">
+            <div class="text-center mb-10">
+                <h2 class="section-title">Who You Would Be Working With</h2>
+                <p class="section-subtitle mt-4">Credentials, credibility, and a clear audience.</p>
+            </div>
+
+            <div class="grid-3 mb-12">
+                <div class="feature-card">
+                    <i class="fa-solid fa-certificate text-accent text-4xl mb-4"></i>
+                    <h3 class="mb-2">ACE Certified Trainer</h3>
+                    <p class="text-muted">ACE Certified Personal Trainer and Sports Nutrition Specialist. EREPS Level 4 member. SPEFL-SC certified. 12 qualifications total covering training, nutrition, and specialised modalities.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-users text-accent text-4xl mb-4"></i>
+                    <h3 class="mb-2">Focused Indian Audience</h3>
+                    <p class="text-muted">My audience is health-conscious, motivated Indian adults between 22 and 45, actively looking to improve their fitness, nutrition, and lifestyle. Primarily based in Madhya Pradesh and tier 2 and 3 Indian cities.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-scale-balanced text-accent text-4xl mb-4"></i>
+                    <h3 class="mb-2">Earned Authority</h3>
+                    <p class="text-muted">My following is built on a documented personal transformation, evidence-based content, and a professional coaching practice. The trust my audience places in my recommendations reflects genuine credibility, not influencer hype.</p>
+                </div>
+            </div>
+
+            <!-- AUDIENCE BREAKDOWN -->
+            <div class="mb-12">
+                <h2 class="section-title mb-6" style="font-size: 1.8rem;">Audience Profile</h2>
+                <table class="audience-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Primary age range</td>
+                            <td>22 to 45 years</td>
+                        </tr>
+                        <tr>
+                            <td>Location</td>
+                            <td>Primarily India, concentrated in MP, UP, Maharashtra, and metro cities</td>
+                        </tr>
+                        <tr>
+                            <td>Gender split</td>
+                            <td>Mixed, with strong representation of both men and women seeking lifestyle transformation</td>
+                        </tr>
+                        <tr>
+                            <td>Fitness level</td>
+                            <td>Beginner to intermediate. Many are starting their fitness journey for the first time.</td>
+                        </tr>
+                        <tr>
+                            <td>Professional background</td>
+                            <td>Primarily working professionals, students, and small business owners with busy schedules</td>
+                        </tr>
+                        <tr>
+                            <td>Diet preferences</td>
+                            <td>Mix of vegetarian, vegan, and non-vegetarian. Indian cuisine is central to most audiences' lives.</td>
+                        </tr>
+                        <tr>
+                            <td>Interests</td>
+                            <td>Health, nutrition, training, body transformation, sustainable lifestyle habits</td>
+                        </tr>
+                        <tr>
+                            <td>Purchase behaviour</td>
+                            <td>Considered buyers who research before committing. Recommendations from trusted sources carry significant weight.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- COLLABORATION TYPES -->
+            <div class="mb-12">
+                <div class="text-center mb-8">
+                    <h2 class="section-title" style="font-size: 1.8rem;">How We Can Work Together</h2>
+                    <p class="section-subtitle mt-4">Four formats. All built around honest, useful content.</p>
+                </div>
+                <div class="collab-grid">
+                    <div class="collab-card">
+                        <div class="collab-icon"><i class="fa-solid fa-star"></i></div>
+                        <h3>Product Review and Integration</h3>
+                        <p>I use and review your product as part of my personal routine or recommend it within my client coaching. Reviews are honest, specific, and written from the perspective of a working fitness professional who puts products to genuine use.</p>
+                    </div>
+                    <div class="collab-card">
+                        <div class="collab-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                        <h3>Sponsored Content</h3>
+                        <p>Original content, across my website, WhatsApp broadcast, and social media, that features your product or service in a meaningful context. Always clearly disclosed. Always grounded in information that is actually useful to my audience.</p>
+                    </div>
+                    <div class="collab-card">
+                        <div class="collab-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <h3>Long-Term Ambassador Role</h3>
+                        <p>An ongoing partnership where your brand becomes part of my professional ecosystem, featured consistently across content, client recommendations, and downloadable resources. Built for brands who want sustained, credible visibility rather than a single placement.</p>
+                    </div>
+                    <div class="collab-card">
+                        <div class="collab-icon"><i class="fa-solid fa-file-lines"></i></div>
+                        <h3>Co-Created Resources</h3>
+                        <p>Jointly produced guides, checklists, or workout and nutrition resources that carry both our branding. Distributed through my platform and available for your marketing use. High-value assets that do genuine work for both sides.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WHY WORK WITH ME -->
+            <div class="mb-12">
+                <div class="text-center mb-8">
+                    <h2 class="section-title" style="font-size: 1.8rem;">Why Partner with a Credentialed Coach</h2>
+                    <p class="section-subtitle mt-4">Not a content creator. A practitioner with an audience.</p>
+                </div>
+                <ul class="values-list">
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span><strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">Qualified to speak with authority</strong>
+                        My recommendations come from 12 professional certifications and direct coaching experience. When I say a product works, my audience understands I have the training to evaluate it properly.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span><strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">Trust built over time, not bought</strong>
+                        My audience is not large because I posted consistently. It is engaged because I have been honest and accurate. That earned trust makes recommendations meaningfully more influential than volume-based influencer placements.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span><strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">Hyper-relevant Indian audience</strong>
+                        My content is built around the specific context of Indian lifestyles, Indian food, and Indian working conditions. For brands targeting the Indian health and wellness market, this specificity is more valuable than a large but generic audience.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span><strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">Long-term thinking</strong>
+                        I am building a coaching practice, not a media channel. I am selective about what I associate my name with, which means a partnership with me carries more signal than a partnership with someone who takes every deal offered.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span><strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">Direct client relationships</strong>
+                        Beyond social media, I have direct relationships with coaching clients through WhatsApp and email. Product mentions in a coaching context, where I am actively guiding someone's health decisions, carry significantly more conversion weight than a social post.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span><strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">Content that holds up to scrutiny</strong>
+                        I do not write vague promotional copy. Content I create is specific, accurate, and grounded in exercise science and nutrition research. This protects your brand as much as mine.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- WHAT I WON'T DO -->
+            <div class="what-i-will-not-do mb-12">
+                <p><strong>What I will not do:</strong> I do not endorse products I have not used or would not personally recommend to a client. I do not promote fat burners, unregulated supplements, detox teas, or anything that contradicts the evidence-based principles I coach from. If your product falls into one of these categories, this is not the right partnership. If your product is genuinely good, let's talk.</p>
+            </div>
+
+            <!-- PITCH FORM -->
+            <div id="pitch" class="pitch-form-wrapper">
+                <h2 class="section-title mb-2" style="font-size: 1.6rem;">Send Your Pitch</h2>
+                <p class="text-muted mb-6">Tell me about your brand, your product, and what kind of collaboration you have in mind. I review every pitch personally and will respond within 48 hours.</p>
+
+                <form id="brand-form" class="custom-form" action="https://formspree.io/f/xreovozz" method="POST">
+                    <input type="hidden" name="_subject" value="Brand Partnership Enquiry - Prakhar FIT">
+
+                    <div class="form-group">
+                        <label for="brand-name">Brand or Company Name</label>
+                        <input type="text" id="brand-name" name="brand_name" required placeholder="Your brand name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-name">Your Name and Role</label>
+                        <input type="text" id="contact-name" name="contact_name" required placeholder="e.g. Priya Sharma, Marketing Manager">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="brand-email">Business Email</label>
+                        <input type="email" id="brand-email" name="email" required placeholder="you@company.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-type">Product or Service Category</label>
+                        <select id="product-type" name="product_type">
+                            <option value="supplements">Supplements and Sports Nutrition</option>
+                            <option value="equipment">Fitness Equipment and Gear</option>
+                            <option value="apparel">Activewear and Apparel</option>
+                            <option value="health_food">Health Foods and Beverages</option>
+                            <option value="app_tech">Fitness Apps or Wearable Tech</option>
+                            <option value="wellness">Wellness and Recovery</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="collab-type">Collaboration Type You Have in Mind</label>
+                        <select id="collab-type" name="collab_type">
+                            <option value="review">Product Review or Integration</option>
+                            <option value="sponsored">Sponsored Content</option>
+                            <option value="ambassador">Long-Term Ambassador Role</option>
+                            <option value="co-created">Co-Created Resources</option>
+                            <option value="open">Open to Discussion</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="brand-website">Brand Website or Social Profile</label>
+                        <input type="url" id="brand-website" name="website" placeholder="https://yourbrand.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="brand-message">Tell Me About Your Brand and What You Are Looking For</label>
+                        <textarea id="brand-message" name="message" rows="6" required placeholder="What does your product do, who is it for, and what kind of partnership are you imagining? The more specific, the better."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-accent btn-large" style="width: 100%;">Send Pitch</button>
+                    <p class="text-center text-muted mt-4" style="font-size: 0.85rem;">I review every pitch personally. You will hear back within 48 hours.</p>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <h3 class="logo mb-4">PRAKHAR FIT</h3>
+            <p class="text-muted mb-4">vaskale123@gmail.com | +91 7999428347</p>
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                <a href="certifications.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.85rem;">Certifications</a>
+                <a href="calculator.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.85rem;">Calculator</a>
+                <a href="faq.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.85rem;">FAQ</a>
+            </div>
+            <p class="text-sm text-dark-muted">&copy; 2026 Prakhar Vaskale. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
