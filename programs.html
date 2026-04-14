@@ -13,7 +13,7 @@
 </head>
 <body>
 
-        <nav class="navbar">
+    <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">PRAKHAR VASKALE FITNESS</a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -43,7 +43,6 @@
         <div class="container">
             <div class="pricing-grid">
 
-                <!-- ESSENTIALS -->
                 <div class="pricing-card">
                     <p class="text-muted mb-4" style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;font-weight:700;">Online &middot; Self-Guided</p>
                     <h2 class="mb-6" style="font-size:2rem;">The Essentials Plan</h2>
@@ -61,7 +60,6 @@
                     <a href="contact.html?plan=essentials" class="btn btn-outline">Enquire About This Plan</a>
                 </div>
 
-                <!-- COMPLETE TRANSFORMATION -->
                 <div class="pricing-card premium">
                     <div class="premium-badge">Most Popular</div>
                     <p class="text-muted mb-4" style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;font-weight:700;">Online &middot; Fully Managed 1-on-1</p>
@@ -84,7 +82,6 @@
 
             </div>
 
-            <!-- NOT SURE -->
             <div class="cta-box mt-12">
                 <p class="eyebrow">Not sure where to start</p>
                 <h3 class="mb-4">Not Sure Which Plan Is Right for You?</h3>
@@ -92,7 +89,6 @@
                 <a href="contact.html" class="btn btn-outline">Fill Out the Contact Form</a>
             </div>
 
-            <!-- FAQ MINI -->
             <div style="margin-top:5rem;">
                 <div class="text-center mb-10">
                     <p class="eyebrow">Common questions</p>
@@ -123,7 +119,7 @@
         </div>
     </main>
 
-        <footer class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div>
@@ -159,15 +155,79 @@
     </footer>
 
     <script>
-    (function(){
-        var nav=document.querySelector('.navbar');
-        var lastY=0,ticking=false;
-        window.addEventListener('scroll',function(){if(!ticking){window.requestAnimationFrame(function(){var y=window.scrollY;if(y>lastY&&y>90){nav.classList.add('nav-up');}else{nav.classList.remove('nav-up');}nav.classList.toggle('nav-scrolled',y>12);lastY=y;ticking=false;});ticking=true;}},{passive:true});
-        var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
-        if(!t||!l)return;
-        t.addEventListener('click',function(){var o=l.classList.toggle('open');t.classList.toggle('open',o);t.setAttribute('aria-expanded',o);});
-        l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-expanded','false');});});
-        document.addEventListener('click',function(e){if(!t.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-expanded','false');}});
-    })();
+    document.addEventListener('DOMContentLoaded', function() {
+        // Navigation Scroll Behavior
+        var nav = document.querySelector('.navbar');
+        var lastY = 0, ticking = false;
+        
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    var y = window.scrollY;
+                    if (y > lastY && y > 90) { nav.classList.add('nav-up'); }
+                    else { nav.classList.remove('nav-up'); }
+                    nav.classList.toggle('nav-scrolled', y > 12);
+                    lastY = y; ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // Mobile Hamburger Toggle
+        var t = document.getElementById('navToggle');
+        var l = document.getElementById('navLinks');
+        
+        if (t && l) {
+            t.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var isOpen = l.classList.contains('open');
+                if (isOpen) {
+                    l.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                } else {
+                    l.classList.add('open');
+                    t.classList.add('open');
+                    t.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            l.querySelectorAll('a').forEach(function(a) {
+                a.addEventListener('click', function() {
+                    l.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (l.classList.contains('open') && !t.contains(e.target) && !l.contains(e.target)) {
+                    l.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        // FAQ Dropdown Toggle
+        var faqBtns = document.querySelectorAll('.faq-question-btn');
+        if (faqBtns.length > 0) {
+            faqBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var expanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !expanded);
+                    var answer = this.nextElementSibling;
+                    if (answer && answer.classList.contains('faq-answer')) {
+                        if (!expanded) {
+                            answer.classList.add('open');
+                        } else {
+                            answer.classList.remove('open');
+                        }
+                    }
+                });
+            });
+        }
+    });
+    </script>
 </body>
 </html>
