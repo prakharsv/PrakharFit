@@ -105,7 +105,7 @@
                 </div>
 
                 <!-- Results -->
-                <div class="calc-result-panel" id="result-panel">
+                <div class="calc-result-panel" id="result-panel" style="display:none;">
 
                     <div style="display:flex;align-items:flex-end;gap:1.5rem;flex-wrap:wrap;margin-bottom:0.5rem;">
                         <div>
@@ -199,7 +199,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
-                    <a href="mailto:prakharvaskalefit@gmail.com">prakharvaskalefit@gmail.com</a>
+                    <a href="/cdn-cgi/l/email-protection#205052414b4841525641534b414c4546495460474d41494c0e434f4d"><span class="__cf_email__" data-cfemail="b0c0c2d1dbd8d1c2c6d1c3dbd1dcd5d6d9c4f0d7ddd1d9dc9ed3dfdd">[email&#160;protected]</span></a>
                     <a href="https://wa.me/918963953181" target="_blank" rel="noopener">+91 89639 53181 (WhatsApp)</a>
                     <a href="contact.html">Get in Touch</a>
                 </div>
@@ -211,7 +211,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     var currentUnit = 'metric';
     var lastResult = {};
 
@@ -227,8 +227,11 @@
         if (currentUnit === 'metric') {
             return parseFloat(document.getElementById('height-cm').value);
         } else {
-            var ft = parseFloat(document.getElementById('height-ft').value) || 0;
-            var inc = parseFloat(document.getElementById('height-in').value) || 0;
+            var ftVal = document.getElementById('height-ft').value;
+            var inVal = document.getElementById('height-in').value;
+            var ft = (ftVal === '' || ftVal === null) ? NaN : parseFloat(ftVal);
+            var inc = (inVal === '' || inVal === null) ? 0 : (parseFloat(inVal) || 0);
+            if (isNaN(ft)) return NaN;
             return (ft * 12 + inc) * 2.54;
         }
     }
@@ -236,7 +239,9 @@
         if (currentUnit === 'metric') {
             return parseFloat(document.getElementById('weight-kg').value);
         } else {
-            return parseFloat(document.getElementById('weight-lbs').value) * 0.453592;
+            var lbsVal = document.getElementById('weight-lbs').value;
+            if (lbsVal === '' || lbsVal === null) return NaN;
+            return parseFloat(lbsVal) * 0.453592;
         }
     }
 
@@ -247,7 +252,12 @@
         var sex = document.getElementById('sex').value;
         var err = document.getElementById('calc-error');
 
-        if (!h || !w || !age || h < 100 || h > 250 || w < 30 || w > 300 || age < 15 || age > 100) {
+        // Determine valid ranges — weight stored as kg internally; imperial min ~20 kg (44 lbs)
+        var wMin = 20, wMax = 350;
+        var hMin = 100, hMax = 250;
+
+        if (isNaN(h) || isNaN(w) || isNaN(age) || !h || !w || !age ||
+            h < hMin || h > hMax || w < wMin || w > wMax || age < 15 || age > 100) {
             err.style.display = 'block';
             return;
         }
@@ -330,7 +340,7 @@
         document.getElementById('result-panel').style.display = 'block';
         document.getElementById('result-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-        lastResult = { bmi: bmi, cat: cat, badge: badge, interp: interp, recs: recs, idealMin: idealMin, idealMax: idealMax, bfPct: bfPct, h: h, w: w, age: age, sex: sex };
+        lastResult = { bmi: bmi, cat: cat, badge: badge, interp: interp, recs: recs, idealMin: idealMin, idealMax: idealMax, bfPct: bfPct, h: h, w: w, age: age, sex: sex, unit: currentUnit };
     }
 
     function downloadPDF() {
@@ -400,7 +410,9 @@
         // Metrics row
         var cols = [
             { label: 'BMI', val: d.bmi.toFixed(1) },
-            { label: 'Ideal Weight Range', val: d.idealMin.toFixed(0) + ' - ' + d.idealMax.toFixed(0) + ' kg' },
+            { label: 'Ideal Weight Range', val: d.unit === 'imperial'
+                ? (d.idealMin * 2.20462).toFixed(0) + ' - ' + (d.idealMax * 2.20462).toFixed(0) + ' lbs'
+                : d.idealMin.toFixed(0) + ' - ' + d.idealMax.toFixed(0) + ' kg' },
             { label: 'Est. Body Fat', val: d.bfPct.toFixed(1) + '%' }
         ];
         var colW = (W - pad * 2 - 8) / 3;
@@ -488,8 +500,4 @@
         var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
         if(!t||!l)return;
         t.addEventListener('click',function(){var o=l.classList.toggle('open');t.classList.toggle('open',o);t.setAttribute('aria-expanded',o);});
-        l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-expanded','false');});});
-        document.addEventListener('click',function(e){if(!t.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-expanded','false');}});
-    })();
-</body>
-</html>
+        l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.classList.remove('open');t.setAttribute('
