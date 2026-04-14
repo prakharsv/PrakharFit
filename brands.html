@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborate | Prakhar Vaskale Fitness</title>
+    <meta http-equiv="refresh" content="0;url=collaborations.html">
+    <link rel="canonical" href="collaborations.html">
+</head>
+<body>
+    <p>Redirecting to <a href="collaborations.html">collaborations page</a>...</p>
+    <script>window.location.replace('collaborations.html');</script>
+    <script>
+    (function(){
+        var nav=document.querySelector('.navbar');
+        var lastY=0,ticking=false;
+        window.addEventListener('scroll',function(){
+            if(!ticking){window.requestAnimationFrame(function(){
+                var y=window.scrollY;
+                if(y>lastY&&y>90){nav.classList.add('nav-up');}
+                else{nav.classList.remove('nav-up');}
+                nav.classList.toggle('nav-scrolled',y>12);
+                lastY=y;ticking=false;
+            });ticking=true;}
+        },{passive:true});
+        var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+        if(!t||!l)return;
+        t.addEventListener('click',function(){var o=l.classList.toggle('open');t.classList.toggle('open',o);t.setAttribute('aria-expanded',o);});
+        l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-expanded','false');});});
+        document.addEventListener('click',function(e){if(!t.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-expanded','false');}});
+    })();
+    </script>
+</body>
+</html>
