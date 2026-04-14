@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Prakhar Vaskale Fitness</title>
-    <meta name="description" content="Get in touch with Prakhar Vaskale   ACE Certified Personal Trainer. Fill out the form and receive a response within 24 hours.">
+    <meta name="description" content="Get in touch with Prakhar Vaskale — ACE Certified Personal Trainer. Fill out the form and receive a response within 24 hours.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 </head>
 <body>
 
-        <nav class="navbar">
+    <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">PRAKHAR VASKALE FITNESS</a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -35,7 +35,6 @@
         <div class="container">
             <div class="contact-grid">
 
-                <!-- LEFT -->
                 <div>
                     <p class="eyebrow" style="justify-content:flex-start;">Get started</p>
                     <h1 class="section-title mb-6">Let's Figure Out Your Starting Point.</h1>
@@ -73,7 +72,6 @@
                     </div>
                 </div>
 
-                <!-- RIGHT: FORM -->
                 <div class="contact-form-wrapper">
                     <div id="fs-success-msg" style="display:none;margin-bottom:1rem;padding:1rem;text-align:center;border:1px solid var(--accent);border-radius:6px;background:rgba(204,255,0,0.05);">
                         <h3 class="text-accent mb-2">Form Received</h3>
@@ -98,7 +96,7 @@
                                 <option value="none">I have a general question first</option>
                                 <option value="essentials">The Essentials Plan (self-guided)</option>
                                 <option value="transformation">The Complete Transformation (1-on-1)</option>
-                                <option value="unsure">Not sure yet   help me decide</option>
+                                <option value="unsure">Not sure yet — help me decide</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -133,7 +131,7 @@
         </div>
     </main>
 
-        <footer class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div>
@@ -221,30 +219,59 @@
         });
     })();
 
-    /* Nav */
-    (function(){
-        var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
-        if(!t||!l)return;
-        t.addEventListener('click',function(){var o=l.classLi
-    <script>
-    (function(){
-        var nav=document.querySelector('.navbar');
-        var lastY=0,ticking=false;
-        window.addEventListener('scroll',function(){
-            if(!ticking){window.requestAnimationFrame(function(){
-                var y=window.scrollY;
-                if(y>lastY&&y>90){nav.classList.add('nav-up');}
-                else{nav.classList.remove('nav-up');}
-                nav.classList.toggle('nav-scrolled',y>12);
-                lastY=y;ticking=false;
-            });ticking=true;}
-        },{passive:true});
-        var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
-        if(!t||!l)return;
-        t.addEventListener('click',function(){var o=l.classList.toggle('open');t.classList.toggle('open',o);t.setAttribute('aria-expanded',o);});
-        l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-expanded','false');});});
-        document.addEventListener('click',function(e){if(!t.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-expanded','false');}});
-    })();
+    /* Nav Master Script */
+    document.addEventListener('DOMContentLoaded', function() {
+        var nav = document.querySelector('.navbar');
+        var lastY = 0, ticking = false;
+        
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    var y = window.scrollY;
+                    if (y > lastY && y > 90) { nav.classList.add('nav-up'); }
+                    else { nav.classList.remove('nav-up'); }
+                    nav.classList.toggle('nav-scrolled', y > 12);
+                    lastY = y; ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        var t = document.getElementById('navToggle');
+        var l = document.getElementById('navLinks');
+        
+        if (t && l) {
+            t.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var isOpen = l.classList.contains('open');
+                if (isOpen) {
+                    l.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                } else {
+                    l.classList.add('open');
+                    t.classList.add('open');
+                    t.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            l.querySelectorAll('a').forEach(function(a) {
+                a.addEventListener('click', function() {
+                    l.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (l.classList.contains('open') && !t.contains(e.target) && !l.contains(e.target)) {
+                    l.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    });
     </script>
 </body>
 </html>
