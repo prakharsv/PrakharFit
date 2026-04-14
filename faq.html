@@ -13,7 +13,7 @@
 </head>
 <body>
 
-        <nav class="navbar">
+    <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">PRAKHAR VASKALE FITNESS</a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -52,7 +52,6 @@
                 <a href="#logistics">Logistics</a>
             </div>
 
-            <!-- ABOUT -->
             <div id="about">
                 <p class="faq-section-title">About Prakhar</p>
 
@@ -79,7 +78,6 @@
                 </div>
             </div>
 
-            <!-- IS THIS FOR ME -->
             <div id="right-for-me">
                 <p class="faq-section-title">Is This for Me</p>
 
@@ -122,7 +120,6 @@
                 </div>
             </div>
 
-            <!-- GOALS AND RESULTS -->
             <div id="goals">
                 <p class="faq-section-title">Goals and Results</p>
 
@@ -151,7 +148,6 @@
                 </div>
             </div>
 
-            <!-- ONLINE COACHING -->
             <div id="online">
                 <p class="faq-section-title">Online Coaching Process</p>
 
@@ -187,7 +183,6 @@
                 </div>
             </div>
 
-            <!-- TRAINING -->
             <div id="training">
                 <p class="faq-section-title">Training Questions</p>
 
@@ -227,7 +222,6 @@
                 </div>
             </div>
 
-            <!-- NUTRITION -->
             <div id="nutrition">
                 <p class="faq-section-title">Nutrition Questions</p>
 
@@ -270,7 +264,6 @@
                 </div>
             </div>
 
-            <!-- LOGISTICS -->
             <div id="logistics">
                 <p class="faq-section-title">Logistics</p>
 
@@ -319,7 +312,7 @@
         </div>
     </main>
 
-        <footer class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div>
@@ -355,22 +348,79 @@
     </footer>
 
     <script>
-    document.querySelectorAll('.faq-question-btn').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            var expanded = btn.getAttribute('aria-expanded') === 'true';
-            btn.setAttribute('aria-expanded', !expanded);
-            btn.nextElementSibling.classList.toggle('open', !expanded);
-        });
+    document.addEventListener('DOMContentLoaded', function() {
+        // Navigation Scroll Behavior
+        var nav = document.querySelector('.navbar');
+        var lastY = 0, ticking = false;
+        
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    var y = window.scrollY;
+                    if (y > lastY && y > 90) { nav.classList.add('nav-up'); }
+                    else { nav.classList.remove('nav-up'); }
+                    nav.classList.toggle('nav-scrolled', y > 12);
+                    lastY = y; ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // Mobile Hamburger Toggle
+        var t = document.getElementById('navToggle');
+        var l = document.getElementById('navLinks');
+        
+        if (t && l) {
+            t.addEventListener('click', function(e) {
+                e.stopPropagation(); // Stops the document click listener from firing immediately
+                var isOpen = l.classList.contains('open');
+                if (isOpen) {
+                    l.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                } else {
+                    l.classList.add('open');
+                    t.classList.add('open');
+                    t.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            l.querySelectorAll('a').forEach(function(a) {
+                a.addEventListener('click', function() {
+                    l.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (l.classList.contains('open') && !t.contains(e.target) && !l.contains(e.target)) {
+                    l.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        // FAQ Dropdown Toggle
+        var faqBtns = document.querySelectorAll('.faq-question-btn');
+        if (faqBtns.length > 0) {
+            faqBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var expanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !expanded);
+                    var answer = this.nextElementSibling;
+                    if (answer && answer.classList.contains('faq-answer')) {
+                        if (!expanded) {
+                            answer.classList.add('open');
+                        } else {
+                            answer.classList.remove('open');
+                        }
+                    }
+                });
+            });
+        }
     });
-    (function(){
-        var nav=document.querySelector('.navbar');
-        var lastY=0,ticking=false;
-        window.addEventListener('scroll',function(){if(!ticking){window.requestAnimationFrame(function(){var y=window.scrollY;if(y>lastY&&y>90){nav.classList.add('nav-up');}else{nav.classList.remove('nav-up');}nav.classList.toggle('nav-scrolled',y>12);lastY=y;ticking=false;});ticking=true;}},{passive:true});
-        var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
-        if(!t||!l)return;
-        t.addEventListener('click',function(){var o=l.classList.toggle('open');t.classList.toggle('open',o);t.setAttribute('aria-expanded',o);});
-        l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-expanded','false');});});
-        document.addEventListener('click',function(e){if(!t.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-expanded','false');}});
-    })();
+    </script>
 </body>
 </html>
