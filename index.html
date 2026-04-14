@@ -13,7 +13,7 @@
 </head>
 <body>
 
-        <nav class="navbar">
+    <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">PRAKHAR VASKALE FITNESS</a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -31,7 +31,6 @@
         </div>
     </nav>
 
-    <!-- HERO -->
     <header class="hero">
         <div class="hero-bg"></div>
         <div class="hero-noise"></div>
@@ -64,7 +63,6 @@
         </div>
     </header>
 
-    <!-- GOALS -->
     <section class="section light-section">
         <div class="container">
             <div class="text-center mb-12">
@@ -92,7 +90,6 @@
         </div>
     </section>
 
-    <!-- BRIEF STORY TEASE -->
     <section class="section dark-section">
         <div class="container">
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:5rem;align-items:center;">
@@ -124,7 +121,6 @@
         </div>
     </section>
 
-    <!-- HOW IT WORKS -->
     <section class="section light-section">
         <div class="container">
             <div class="text-center mb-12">
@@ -157,7 +153,6 @@
         </div>
     </section>
 
-    <!-- WHY CLIENTS CHOOSE ME -->
     <section class="section dark-section">
         <div class="container">
             <div class="text-center mb-12">
@@ -185,7 +180,6 @@
         </div>
     </section>
 
-    <!-- CLIENT RESULTS TEASE -->
     <section class="section darker-section">
         <div class="container">
             <div class="text-center mb-12">
@@ -219,7 +213,6 @@
         </div>
     </section>
 
-    <!-- FINAL CTA -->
     <section class="section dark-section text-center border-y">
         <div class="container">
             <p class="eyebrow">Get started</p>
@@ -232,7 +225,7 @@
         </div>
     </section>
 
-        <footer class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div>
@@ -268,15 +261,59 @@
     </footer>
 
     <script>
-    (function(){
-        var nav=document.querySelector('.navbar');
-        var lastY=0,ticking=false;
-        window.addEventListener('scroll',function(){if(!ticking){window.requestAnimationFrame(function(){var y=window.scrollY;if(y>lastY&&y>90){nav.classList.add('nav-up');}else{nav.classList.remove('nav-up');}nav.classList.toggle('nav-scrolled',y>12);lastY=y;ticking=false;});ticking=true;}},{passive:true});
-        var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
-        if(!t||!l)return;
-        t.addEventListener('click',function(){var o=l.classList.toggle('open');t.classList.toggle('open',o);t.setAttribute('aria-expanded',o);});
-        l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-expanded','false');});});
-        document.addEventListener('click',function(e){if(!t.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-expanded','false');}});
-    })();
+    /* Nav Master Script */
+    document.addEventListener('DOMContentLoaded', function() {
+        var nav = document.querySelector('.navbar');
+        var lastY = 0, ticking = false;
+        
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    var y = window.scrollY;
+                    if (y > lastY && y > 90) { nav.classList.add('nav-up'); }
+                    else { nav.classList.remove('nav-up'); }
+                    nav.classList.toggle('nav-scrolled', y > 12);
+                    lastY = y; ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        var t = document.getElementById('navToggle');
+        var l = document.getElementById('navLinks');
+        
+        if (t && l) {
+            t.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var isOpen = l.classList.contains('open');
+                if (isOpen) {
+                    l.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                } else {
+                    l.classList.add('open');
+                    t.classList.add('open');
+                    t.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            l.querySelectorAll('a').forEach(function(a) {
+                a.addEventListener('click', function() {
+                    l.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (l.classList.contains('open') && !t.contains(e.target) && !l.contains(e.target)) {
+                    l.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    });
+    </script>
 </body>
 </html>
