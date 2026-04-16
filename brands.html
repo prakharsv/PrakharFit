@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborate | Prakhar Vaskale Fitness</title>
+    <meta http-equiv="refresh" content="0;url=collaborations.html">
+    <link rel="canonical" href="collaborations.html">
+</head>
+<body>
+    <p>Redirecting to <a href="collaborations.html">collaborations page</a>...</p>
+    <script>window.location.replace('collaborations.html');</script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Navigation Scroll Behavior
+        var nav = document.querySelector('.navbar');
+        var lastY = 0, ticking = false;
+        
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    var y = window.scrollY;
+                    if (y > lastY && y > 90) { nav.classList.add('nav-up'); }
+                    else { nav.classList.remove('nav-up'); }
+                    nav.classList.toggle('nav-scrolled', y > 12);
+                    lastY = y; ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // Mobile Hamburger Toggle
+        var t = document.getElementById('navToggle');
+        var l = document.getElementById('navLinks');
+        
+        if (t && l) {
+            t.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var isOpen = l.classList.contains('open');
+                if (isOpen) {
+                    l.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                } else {
+                    l.classList.add('open');
+                    t.classList.add('open');
+                    t.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            l.querySelectorAll('a').forEach(function(a) {
+                a.addEventListener('click', function() {
+                    l.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (l.classList.contains('open') && !t.contains(e.target) && !l.contains(e.target)) {
+                    l.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        // FAQ Dropdown Toggle
+        var faqBtns = document.querySelectorAll('.faq-question-btn');
+        if (faqBtns.length > 0) {
+            faqBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var expanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !expanded);
+                    var answer = this.nextElementSibling;
+                    if (answer && answer.classList.contains('faq-answer')) {
+                        if (!expanded) {
+                            answer.classList.add('open');
+                        } else {
+                            answer.classList.remove('open');
+                        }
+                    }
+                });
+            });
+        }
+    });
+    </script>
+</body>
+</html>
